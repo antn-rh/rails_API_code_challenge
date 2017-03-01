@@ -13,8 +13,8 @@ class Api::V1::ContactsController < ApplicationController
 
     Important information about people can be found here. All information is stored in JSON format.
 
-    To see all contacts, visit localhost:3000/api/v1/contacts.
-    To see individual contacts, visit localhost:3000/api/v1/contacts/:id and replace :id with id found in /contacts.
+    To see all contacts, visit the /api/v1/contacts endpoint.
+    To see individual contacts, visit the /api/v1/contacts/:id endpoint and replace :id with id found in /contacts.
     '
   end
 
