@@ -22,7 +22,6 @@ class Api::V1::ContactsController < ApplicationController
   def index
     @contacts = Contact.all
 
-    # render json: @contacts, status: :ok
     respond_to do |format|
       format.json { render json: @contacts }
     end
@@ -30,7 +29,6 @@ class Api::V1::ContactsController < ApplicationController
 
   # GET /api/v1/contacts/:id
   def show
-    # render json: @contact
     respond_to do |format|
       format.json { render json: @contact }
     end
@@ -40,9 +38,7 @@ class Api::V1::ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
 
-    # once contact is created it will return http status 201 'Created'
     @contact.save
-    # render json: @contact, status: :created
     respond_to do |format|
       format.json { render json: @contact }
     end
@@ -53,7 +49,6 @@ class Api::V1::ContactsController < ApplicationController
     if @contact.update(contact_params)
       head(:no_content)
     else
-      # render json: @contact.errors, status: :unprocessable_entity
       respond_to do |format|
         format.json { render json: @contact.errors }
       end
